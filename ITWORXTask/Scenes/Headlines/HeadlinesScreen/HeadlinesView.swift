@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol HeadlinesView {
+    func startLoading()
+    func stopLoading()
+    func navigateToEmpty()
+}

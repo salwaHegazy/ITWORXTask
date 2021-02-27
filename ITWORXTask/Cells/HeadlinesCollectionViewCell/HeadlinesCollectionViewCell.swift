@@ -21,8 +21,8 @@ class HeadlinesCollectionViewCell: UICollectionViewCell {
     func config(articles : Article){
            self.titleLabel.text = articles.title
            self.nameLabel.text = articles.source.name
-           let url = URL(string: articles.urlToImage ?? "noproducts")
-           self.imgImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "noproducts"))
+           let url = URL(string: articles.urlToImage ?? "defaultImage")
+           self.imgImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "defaultImage"))
            
     }
     
