@@ -11,7 +11,10 @@ import Foundation
 class HeadlinesPresenter {
    var view: HeadlinesView?
    var headlinesVC: HeadlinesVC?
- //  var lang = UserDefault.shared.getStringValue(Constants.lang)
+   var country  = UserDefault.shared.getStringValue(Constants.country)
+   var category1 = UserDefault.shared.getStringValue(Constants.category1)
+   var category2 = UserDefault.shared.getStringValue(Constants.category2)
+   var category3 = UserDefault.shared.getStringValue(Constants.category3)
 
      func attachView(view: HeadlinesView? , headlinesVC: HeadlinesVC?) {
          self.view = view
@@ -30,11 +33,10 @@ class HeadlinesPresenter {
         ITWORXTaskAPI.ITWORXTaskRequest(NConstants.headlines,NewsModel.self,parameters,isHeaders: true,.get) { (response, error) in
           self.view?.stopLoading()
           if response?.status == "ok" {
-            print(response!.articles)
-            self.headlinesVC?.headlinesList.append(contentsOf: response?.articles ?? [Article]())
+             self.headlinesVC?.headlinesList.append(contentsOf: response?.articles ?? [Article]())
             return
             } else {
-            print(response?.status)
+            
 //               self.headlinesVC?.showAlert(title: Localization.localizedString(forKey: KeyConstants.alert), description: response?.status ?? Localization.localizedString(forKey: KeyConstants.servererror), btnAction: Localization.localizedString(forKey: KeyConstants.ok))
             }
            

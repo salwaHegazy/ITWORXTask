@@ -15,6 +15,8 @@ class NConstants {
     
     // Endpoints
     static let headlines: String = "?country=us&category=business&apiKey=6967341f840d42839c7a35de78cd2aad"
+    
+    static let api_Key : String = "6967341f840d42839c7a35de78cd2aad"
   
  //   http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=6967341f840d42839c7a35de78cd2aad
     

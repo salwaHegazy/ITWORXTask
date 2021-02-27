@@ -28,6 +28,7 @@ class HeadlinesVC : UIViewController , HeadlinesView ,EmptyDataSetSource, EmptyD
        }
    let presenter = HeadlinesPresenter()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         headlinesCollectionView.delegate = self
@@ -35,7 +36,11 @@ class HeadlinesVC : UIViewController , HeadlinesView ,EmptyDataSetSource, EmptyD
         headlinesCollectionView.emptyDataSetSource = self
         headlinesCollectionView.emptyDataSetDelegate = self
         presenter.attachView(view: self, headlinesVC: self)
-        presenter.ValidateData(country: "us", category: "business", apiKey: "6967341f840d42839c7a35de78cd2aad")
+        self.countryBtn.title = presenter.country
+        self.firstCatLabel.text = presenter.category1
+        self.secondCatLabel.text = presenter.category2
+        self.thirdCatLabel.text  = presenter.category3
+        presenter.ValidateData(country: "us", category: "business", apiKey: NConstants.api_Key)
         presenter.goToEmpty(articles: headlinesList)
         
     }
