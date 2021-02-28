@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol SearchView {
+    func startLoading()
+    func stopLoading()
+    func navigateToEmpty()
+}

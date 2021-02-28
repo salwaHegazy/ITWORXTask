@@ -22,7 +22,7 @@ class HeadlinesPresenter {
     }
     func ValidateData (country : String , category : String ,apiKey : String ){
          if(!NetworkStatus.isConnectedToNetwork()) {
-//           self.headlinesVC?.showAlert(title: Localization.localizedString(forKey: KeyConstants.alert), description: Localization.localizedString(forKey: KeyConstants.nonetwork), btnAction: Localization.localizedString(forKey: KeyConstants.ok))
+           self.headlinesVC?.showAlert(title: Localization.localizedString(forKey: KeyConstants.alert), description: Localization.localizedString(forKey: KeyConstants.nonetwork), btnAction: Localization.localizedString(forKey: KeyConstants.ok))
          } else {
             self.SendData(country: country, category: category, apiKey: apiKey)
          }
@@ -37,7 +37,7 @@ class HeadlinesPresenter {
             return
             } else {
             
-//               self.headlinesVC?.showAlert(title: Localization.localizedString(forKey: KeyConstants.alert), description: response?.status ?? Localization.localizedString(forKey: KeyConstants.servererror), btnAction: Localization.localizedString(forKey: KeyConstants.ok))
+               self.headlinesVC?.showAlert(title: Localization.localizedString(forKey: KeyConstants.alert), description: response?.status ?? Localization.localizedString(forKey: KeyConstants.servererror), btnAction: Localization.localizedString(forKey: KeyConstants.ok))
             }
            
          }

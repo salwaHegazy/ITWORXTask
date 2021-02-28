@@ -12,7 +12,7 @@ import NVActivityIndicatorView
 
 class HeadlinesVC : UIViewController , HeadlinesView ,EmptyDataSetSource, EmptyDataSetDelegate {
    // MARK: - Outlets
-   @IBOutlet weak var countryBtn: UIBarButtonItem!
+   @IBOutlet weak var countryLabel: UILabel!
    @IBOutlet weak var firstCatLabel: UILabel!
    @IBOutlet weak var secondCatLabel: UILabel!
    @IBOutlet weak var thirdCatLabel: UILabel!
@@ -36,16 +36,22 @@ class HeadlinesVC : UIViewController , HeadlinesView ,EmptyDataSetSource, EmptyD
         headlinesCollectionView.emptyDataSetSource = self
         headlinesCollectionView.emptyDataSetDelegate = self
         presenter.attachView(view: self, headlinesVC: self)
-        self.countryBtn.title = presenter.country
+        self.countryLabel.text = presenter.country
         self.firstCatLabel.text = presenter.category1
         self.secondCatLabel.text = presenter.category2
         self.thirdCatLabel.text  = presenter.category3
-        presenter.ValidateData(country: "us", category: "business", apiKey: NConstants.api_Key)
+        presenter.ValidateData(country: "US", category: "business", apiKey: NConstants.api_Key)
         presenter.goToEmpty(articles: headlinesList)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(true)
+       self.navigationController?.navigationBar.isHidden = false
+    }
+    
     func navigateToEmpty() {
-     //   self.showEmptyResultMessage(show: true,KeyConstants.empty, "", headlinesCollectionView)
+        self.showEmptyResultMessage(show: true,KeyConstants.defaultImage, KeyConstants.noArticles, headlinesCollectionView)
     }
     func startLoading() {
          loadingIndicator.startAnimating()
@@ -54,7 +60,13 @@ class HeadlinesVC : UIViewController , HeadlinesView ,EmptyDataSetSource, EmptyD
         loadingIndicator.stopAnimating()
     }
     
-
+    @IBAction func searchBtnPressed(_ sender: Any) {
+        openVC(storyBoard: "Search", identifier: "SearchVC")
+    }
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        
+    }
 }
 
 extension HeadlinesVC : UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {

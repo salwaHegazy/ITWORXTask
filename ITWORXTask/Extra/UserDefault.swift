@@ -32,5 +32,8 @@ class UserDefault : UserDefaults {
     func getDoubleValue(_ key: String) -> Double {
         return UserDefaults.standard.double(forKey: key)
     }
+    func isUserLoggedIn() -> Bool {
+        return UserDefault.shared.getStringValue(Constants.country).isEmpty == false
+    }
    
 }

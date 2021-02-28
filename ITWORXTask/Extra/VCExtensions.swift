@@ -57,7 +57,18 @@ extension UIViewController {
     @objc func dissmisKeyboard() {
         view.endEditing(true)
     }
-    
+    func showEmptyResultMessage(show: Bool,_ imageName: String = "",_ description: String = Localization.localizedString(forKey: KeyConstants.noDate),_ collection: UICollectionView) {
+        if show {
+            collection.emptyDataSetView { (view) in
+                view.image(UIImage(named: imageName)).titleLabelString(NSAttributedString(string: description.localized)).shouldFadeIn(true).verticalSpace(37.2)
+            }
+        } else {
+            collection.emptyDataSetView { (view) in
+                view.detailLabelString(NSAttributedString(string: ""))
+                
+            }
+        }
+    }
     func openLink(urlLink: String) {
          if let url = URL(string: urlLink)
             {
