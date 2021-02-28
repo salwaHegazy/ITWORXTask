@@ -75,7 +75,6 @@ class OnboardingVC: UIViewController {
           unSelectCheckedBtn(Button: Button, category: category)
         }
     }
-    
     func unSelectCheckedBtn(Button : UIButton  , category : String ){
          Button.setImage(UIImage(named: "checkedempty"), for: .normal)
             for (index,value) in favouriteCategories.enumerated(){
@@ -85,7 +84,6 @@ class OnboardingVC: UIViewController {
                 }
             }
     }
-    
     func addFavouriteCategories (category : String) {
         if favouriteCategories.count <= 2 {
             if favouriteCategories.contains(category) != true {

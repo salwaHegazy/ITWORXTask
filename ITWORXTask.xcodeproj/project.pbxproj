@@ -49,8 +49,8 @@
 		9C972A769124F016027F6D52 /* Pods-ITWORXTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITWORXTask.debug.xcconfig"; path = "Target Support Files/Pods-ITWORXTask/Pods-ITWORXTask.debug.xcconfig"; sourceTree = "<group>"; };
 		B057940325EBF1320064F91A /* ITWORXTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ITWORXTask.xcdatamodel; sourceTree = "<group>"; };
 		B057940625EBF2DF0064F91A /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
-		B057941025EBFAD60064F91A /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataClass.swift"; path = "/Users/mgoku/Desktop/ITWORXTask/ITWORXTask/Article+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		B057941125EBFAD60064F91A /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataProperties.swift"; path = "/Users/mgoku/Desktop/ITWORXTask/ITWORXTask/Article+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		B057941025EBFAD60064F91A /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B057941125EBFAD60064F91A /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B099DF7525E95F4C00D9D0A5 /* ITWORXTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITWORXTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B099DF7825E95F4C00D9D0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B099DF7A25E95F4C00D9D0A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
