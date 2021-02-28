@@ -318,10 +318,11 @@
             </objects>
             <point key="canvasLocation" x="1192.753623188406" y="226.33928571428569"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Headline Nav-->
         <scene sceneID="8eV-9o-gmV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G5d-Ig-rth" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ub-Oa-xhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="HeadlineNav" automaticallyAdjustsScrollViewInsets="NO" id="G5d-Ig-rth" customClass="HeadlineNav" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mGY-ee-eR0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -332,7 +333,6 @@
                         <segue destination="Qvx-hh-JIl" kind="relationship" relationship="rootViewController" id="3No-vz-gwk"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ub-Oa-xhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="282.60869565217394" y="226.33928571428569"/>
         </scene>

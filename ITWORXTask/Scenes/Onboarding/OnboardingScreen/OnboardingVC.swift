@@ -60,7 +60,8 @@ class OnboardingVC: UIViewController {
     @IBAction func nextBtnPressed(_ sender: UIButton) {
         if selectedCountry != nil && favouriteCategories.count == 3 {
            UserDefault.shared.SaveUserInfo(country: selectedCountry ?? "Egypt", favouriteCategories: favouriteCategories, checkLogin: true)
-           openVC(storyBoard: "Headlines", identifier: "HeadlinesVC")
+           openVC(storyBoard: "Onboarding", identifier: "ChangeLanguageVC")
+          
         } else {
            showToast(message: "Please Select Country and 3 Favourite Categories")
         }

@@ -20,10 +20,13 @@ static let nonetwork: String = "nonetwork"
 static let noDate:String = "noDate"
 static let defaultImage = "defaultImage"
 static let noArticles:String = "No Articles Found"
-    static let noCategory : String = "Empty Category"
+static let noCategory : String = "Empty Category"
 
 
-
+// Change Language
+ static let changeLangBtn: String = "changeLang"
+ static let en: String = "en"
+ static let ar: String = "ar"
 
 
 }

@@ -57,7 +57,7 @@ class SearchVC: UIViewController , SearchView ,EmptyDataSetSource, EmptyDataSetD
         func stopLoading() {
             loadingIndicator.stopAnimating()
         }
-        
+   
         @IBAction func searchBtnPressed(_ sender: Any) {
             articlesList.removeAll()
             presenter.ValidateData(country: presenter.country, category: searchTextField.text ?? presenter.category1 , apiKey: NConstants.api_Key)

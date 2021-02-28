@@ -11,7 +11,6 @@
         <!--SearchVC-->
         <scene sceneID="pTa-t2-08P">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xVU-ov-f4v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SearchVC" id="OD4-4c-qYy" customClass="SearchVC" customModule="ITWORXTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VfU-Uf-bsd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -31,7 +30,7 @@
                                             <action selector="backBtnPressed:" destination="OD4-4c-qYy" eventType="touchUpInside" id="bup-05-bD9"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNf-AL-whZ" customClass="DesignableView" customModule="EsquiresCafe" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNf-AL-whZ" customClass="DesignableView" customModule="ITWORXTask" customModuleProvider="target">
                                         <rect key="frame" x="35" y="0.0" width="339" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GYj-uq-e3Z">
@@ -321,6 +320,7 @@
                         <outlet property="thirdCategoryBtn" destination="ryx-N6-Wd4" id="WvM-H3-nIh"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVU-ov-f4v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="460.86956521739131" y="66.964285714285708"/>
         </scene>

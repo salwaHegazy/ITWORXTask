@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol ChangeLanguageView {
+
+    func showMessage()
+    func langEmpty()
+}

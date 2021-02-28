@@ -65,7 +65,7 @@ class HeadlinesVC : UIViewController , HeadlinesView ,EmptyDataSetSource, EmptyD
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
-        
+       openVC(storyBoard: "Onboarding", identifier: "ChangeLanguageVC")
     }
 }
 

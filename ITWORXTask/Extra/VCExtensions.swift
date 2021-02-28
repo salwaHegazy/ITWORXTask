@@ -69,6 +69,13 @@ extension UIViewController {
             }
         }
     }
+    // To change Language and reset App
+      func showMessageResetApp(lang: String?) {
+           self.tabBarController?.selectedIndex = 0
+           MOLH.setLanguageTo(lang!)
+           MOLH.reset()
+       }
+    
     func openLink(urlLink: String) {
          if let url = URL(string: urlLink)
             {

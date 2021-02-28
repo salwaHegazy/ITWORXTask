@@ -253,8 +253,8 @@
 		B099DFA925E97B8200D9D0A5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				B0F0E0E125EB277100885230 /* ChangeLanguageScreen */,
 				B099DFB325E97C7000D9D0A5 /* OnboardingScreen */,
+				B0F0E0E125EB277100885230 /* ChangeLanguageScreen */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -289,8 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				B099DFB425E97C9100D9D0A5 /* OnboardingVC.swift */,
-				B099DFB625E97CA300D9D0A5 /* OnboardingView.swift */,
 				B099DFB825E97CBC00D9D0A5 /* OnboardingPresenter.swift */,
+				B099DFB625E97CA300D9D0A5 /* OnboardingView.swift */,
 			);
 			path = OnboardingScreen;
 			sourceTree = "<group>";

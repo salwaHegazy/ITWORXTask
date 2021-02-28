@@ -16,6 +16,9 @@ class Constants {
     static let category2: String = "category2"
     static let category3: String = "category3"
     static var login: Bool?
+    //change language
+    static let lang: String = "lang"
+    static var langState: Bool?
    
     
 }
