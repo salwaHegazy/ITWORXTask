@@ -15,6 +15,9 @@ class SearchPresenter {
    var category1 = UserDefault.shared.getStringValue(Constants.category1)
    var category2 = UserDefault.shared.getStringValue(Constants.category2)
    var category3 = UserDefault.shared.getStringValue(Constants.category3)
+   var qUrl = NConstants.NewsApiBASE
+   var qParams = ""
+   var sUrl = ""
 
      func attachView(view: SearchView? , searchVC: SearchVC?) {
          self.view = view
@@ -30,23 +33,38 @@ class SearchPresenter {
             self.SendData(country: country, category: category, apiKey: apiKey)
          }
     }
+ 
     func SendData(country : String , category : String ,apiKey : String ){
-          self.view?.startLoading()
-          let parameters = ["country" : country, "category": category , "apiKey" : apiKey]
-        ITWORXTaskAPI.ITWORXTaskRequest(NConstants.headlines,NewsModel.self,parameters,isHeaders: true,.get) { (response, error) in
-          self.view?.stopLoading()
-          if response?.status == "ok" {
-             self.searchVC?.articlesList.append(contentsOf: response?.articles ?? [Article]())
-            return
-            } else {
-            
-               self.searchVC?.showAlert(title: Localization.localizedString(forKey: KeyConstants.alert), description: response?.status ?? Localization.localizedString(forKey: KeyConstants.servererror), btnAction: Localization.localizedString(forKey: KeyConstants.ok))
+            self.view?.startLoading()
+            let parameters = ["apiKey" : apiKey , "category": category , "country" : country]
+            print(parameters)
+            for (key , value) in parameters {
+              qParams += key + "=" + value + "&"
+              print(qParams)
             }
-           
-         }
-     
-     }
+          if !qParams.isEmpty {
+              qParams = "?" + qParams
+              if qParams.hasSuffix("&") {
+                 qParams.removeLast()
+              }
+              sUrl = qUrl + qParams
+            
+          }
+        
+          ITWORXTaskAPI.getAlamoRequest(url: URL(string: sUrl)!, parameters, responseType: NewsModel.self) { (response, errorMessage, error) in
+              self.view?.stopLoading()
+              if response?.status == "ok" {
+                 self.searchVC?.articlesList.append(contentsOf: response?.articles ?? [Article]())
+                 self.qParams = ""
+                 self.sUrl = ""
+                 return
+              } else {
+                 self.searchVC?.showAlert(title: Localization.localizedString(forKey: KeyConstants.alert), description: response?.status ?? Localization.localizedString(forKey: KeyConstants.servererror), btnAction: Localization.localizedString(forKey: KeyConstants.ok))
+              }
+          }
     
+       }
+ 
      func goToEmpty(articles : [Article]) {
          if articles.count == 0 {
              self.view?.navigateToEmpty()

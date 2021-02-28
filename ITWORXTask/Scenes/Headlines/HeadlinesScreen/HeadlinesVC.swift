@@ -40,7 +40,7 @@ class HeadlinesVC : UIViewController , HeadlinesView ,EmptyDataSetSource, EmptyD
         self.firstCatLabel.text = presenter.category1
         self.secondCatLabel.text = presenter.category2
         self.thirdCatLabel.text  = presenter.category3
-        presenter.ValidateData(country: "US", category: "business", apiKey: NConstants.api_Key)
+        presenter.ValidateData(country: presenter.country, category: presenter.category1, apiKey: NConstants.api_Key)
         presenter.goToEmpty(articles: headlinesList)
         
     }

@@ -35,10 +35,10 @@ class OnboardingVC: UIViewController {
     @IBAction func checkBtnPressed(_ sender: UIButton) {
         switch sender.tag {
         case 0:
-            selectCheckedBtn(Button: firstBtn, category: "Engineering")
+            selectCheckedBtn(Button: firstBtn, category: "Business")
             print(favouriteCategories)
         case 1:
-            selectCheckedBtn(Button: secondBtn, category: "Business")
+            selectCheckedBtn(Button: secondBtn, category: "Engineering")
             print(favouriteCategories)
         case 2:
             selectCheckedBtn(Button: thirdBtn, category: "Fashion")

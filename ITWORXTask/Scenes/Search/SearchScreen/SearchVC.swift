@@ -40,7 +40,7 @@ class SearchVC: UIViewController , SearchView ,EmptyDataSetSource, EmptyDataSetD
             self.firstCategoryBtn.setTitle(presenter.category1, for: .normal)
             self.secondCategoryBtn.setTitle(presenter.category2, for: .normal)
             self.thirdCategoryBtn.setTitle(presenter.category3, for: .normal)
-            presenter.ValidateData(country: "US", category: "business", apiKey: NConstants.api_Key)
+            presenter.ValidateData(country: presenter.country, category:presenter.category1, apiKey: NConstants.api_Key)
             presenter.goToEmpty(articles: articlesList)
             
         }
@@ -66,7 +66,7 @@ class SearchVC: UIViewController , SearchView ,EmptyDataSetSource, EmptyDataSetD
     
         @IBAction func searchByCategoryBtnPressed(_ sender: UIButton) {
             articlesList.removeAll()
-            presenter.ValidateData(country: presenter.country, category: sender.titleLabel!.text!, apiKey: NConstants.api_Key)
+            presenter.ValidateData(country: presenter.country, category: sender.titleLabel!.text ?? presenter.category1 , apiKey: NConstants.api_Key)
             presenter.goToEmpty(articles: articlesList)
         }
        
