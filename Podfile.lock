@@ -1,0 +1,48 @@
+PODS:
+  - Alamofire (5.4.1)
+  - EmptyDataSet-Swift (5.0.0)
+  - iOSDropDown (0.3.4)
+  - IQKeyboardManager (6.5.6)
+  - MOLH (1.4.3)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - EmptyDataSet-Swift
+  - iOSDropDown
+  - IQKeyboardManager
+  - MOLH
+  - NVActivityIndicatorView
+  - SDWebImage
+  - Toast-Swift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - EmptyDataSet-Swift
+    - iOSDropDown
+    - IQKeyboardManager
+    - MOLH
+    - NVActivityIndicatorView
+    - SDWebImage
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 87b4c3dc99bfaee227e3fc67a6fd9941453285db
+
+COCOAPODS: 1.9.1
