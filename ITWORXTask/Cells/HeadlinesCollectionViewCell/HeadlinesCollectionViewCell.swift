@@ -18,9 +18,10 @@ class HeadlinesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    func config(articles : Article){
+    func config(articles : ArticleData){
            self.titleLabel.text = articles.title
            self.nameLabel.text = articles.source.name
+           self.dateLabel.text = articles.publishedAt
            let url = URL(string: articles.urlToImage ?? "defaultImage")
            self.imgImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "defaultImage"))
            

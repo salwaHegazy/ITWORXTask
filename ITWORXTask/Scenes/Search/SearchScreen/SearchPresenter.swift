@@ -54,7 +54,7 @@ class SearchPresenter {
           ITWORXTaskAPI.getAlamoRequest(url: URL(string: sUrl)!, parameters, responseType: NewsModel.self) { (response, errorMessage, error) in
               self.view?.stopLoading()
               if response?.status == "ok" {
-                 self.searchVC?.articlesList.append(contentsOf: response?.articles ?? [Article]())
+                 self.searchVC?.articlesList.append(contentsOf: response?.articles ?? [ArticleData]())
                  self.qParams = ""
                  self.sUrl = ""
                  return
@@ -65,7 +65,7 @@ class SearchPresenter {
     
        }
  
-     func goToEmpty(articles : [Article]) {
+     func goToEmpty(articles : [ArticleData]) {
          if articles.count == 0 {
              self.view?.navigateToEmpty()
          }

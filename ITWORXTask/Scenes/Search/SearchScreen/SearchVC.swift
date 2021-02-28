@@ -20,7 +20,7 @@ class SearchVC: UIViewController , SearchView ,EmptyDataSetSource, EmptyDataSetD
     @IBOutlet weak var loadingIndicator: NVActivityIndicatorView!
     
     var categoryName : String?
-    var articlesList = [Article]()
+    var articlesList = [ArticleData]()
         {
           didSet {
               articlesCollectionView.reloadData()

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class HeadlinesPresenter {
    var view: HeadlinesView?
@@ -18,7 +19,7 @@ class HeadlinesPresenter {
    var qUrl = NConstants.NewsApiBASE
    var qParams = ""
    var sUrl = ""
-   
+   let persistence = PersistenceService.shared
 
      func attachView(view: HeadlinesView? , headlinesVC: HeadlinesVC?) {
          self.view = view
@@ -26,8 +27,18 @@ class HeadlinesPresenter {
     }
     func ValidateData (country : String , category : String ,apiKey : String ){
          if(!NetworkStatus.isConnectedToNetwork()) {
+            /*
+             // fetch data from  CoreData when offline
+            persistence.fetch(Article.self) { [weak self](articles) in
+              //  self?.headlinesVC?.headlinesList .append(articles)
+                print(articles)
+            }
+           */
            self.headlinesVC?.showAlert(title: Localization.localizedString(forKey: KeyConstants.alert), description: Localization.localizedString(forKey: KeyConstants.nonetwork), btnAction: Localization.localizedString(forKey: KeyConstants.ok))
+            
+            
          } else {
+           
             self.SendData(country: country, category: category, apiKey: apiKey)
          }
     }
@@ -52,9 +63,21 @@ class HeadlinesPresenter {
         ITWORXTaskAPI.getAlamoRequest(url: URL(string: sUrl)!, parameters, responseType: NewsModel.self) { (response, errorMessage, error) in
             self.view?.stopLoading()
             if response?.status == "ok" {
-               self.headlinesVC?.headlinesList.append(contentsOf: response?.articles ?? [Article]())
+               self.headlinesVC?.headlinesList.append(contentsOf: response?.articles ?? [ArticleData]())
                self.qParams = ""
                self.sUrl = ""
+                // save data to CoreData
+                let article = Article(context: self.persistence.context)
+                for art in response?.articles ?? [ArticleData]() {
+                    article.name = art.source.name
+                    article.title = art.title
+                    article.url   = art.url
+                    article.articleDescription = art.articleDescription
+                    article.urlToImage = art.urlToImage
+                    article.publishedAt = art.publishedAt
+                    print("Articles From Core Data" , article)
+                }
+                self.persistence.save()
                return
             } else {
                self.headlinesVC?.showAlert(title: Localization.localizedString(forKey: KeyConstants.alert), description: response?.status ?? Localization.localizedString(forKey: KeyConstants.servererror), btnAction: Localization.localizedString(forKey: KeyConstants.ok))
@@ -63,7 +86,7 @@ class HeadlinesPresenter {
   
      }
     
-     func goToEmpty(articles : [Article]) {
+     func goToEmpty(articles : [ArticleData]) {
          if articles.count == 0 {
              self.view?.navigateToEmpty()
          }

@@ -9,6 +9,7 @@
 import UIKit
 import EmptyDataSet_Swift
 import NVActivityIndicatorView
+import CoreData
 
 class HeadlinesVC : UIViewController , HeadlinesView ,EmptyDataSetSource, EmptyDataSetDelegate {
    // MARK: - Outlets
@@ -20,14 +21,15 @@ class HeadlinesVC : UIViewController , HeadlinesView ,EmptyDataSetSource, EmptyD
    @IBOutlet weak var loadingIndicator: NVActivityIndicatorView!
    
    var categoryName : String?
-   var headlinesList = [Article]()
+   var headlinesList = [ArticleData]()
        {
          didSet {
             headlinesCollectionView.reloadData()
          }
        }
    let presenter = HeadlinesPresenter()
-    
+   
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,10 @@ class HeadlinesVC : UIViewController , HeadlinesView ,EmptyDataSetSource, EmptyD
         self.firstCatLabel.text = presenter.category1
         self.secondCatLabel.text = presenter.category2
         self.thirdCatLabel.text  = presenter.category3
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("persistedDataUpdated"), object: nil, queue: .main) { (_) in
+            
+        }
+        
         presenter.ValidateData(country: presenter.country, category: presenter.category1, apiKey: NConstants.api_Key)
         presenter.goToEmpty(articles: headlinesList)
         

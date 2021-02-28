@@ -9,15 +9,16 @@
 import Foundation
 
 
+
 // MARK: - NewsModel
 struct NewsModel: Codable {
     let status: String
     let totalResults: Int
-    let articles: [Article]?
+    let articles: [ArticleData]?
 }
 
 // MARK: - Article
-struct Article: Codable {
+struct ArticleData: Codable {
     let source: Source
     let author: String?
     let title: String?

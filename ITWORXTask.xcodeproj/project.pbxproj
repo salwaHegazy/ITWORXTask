@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		292A0BEDCCEA624B828DE4E5 /* Pods_ITWORXTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04585E67BA15D5C9DFEA649 /* Pods_ITWORXTask.framework */; };
+		B057940425EBF1320064F91A /* ITWORXTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B057940225EBF1320064F91A /* ITWORXTask.xcdatamodeld */; };
+		B057940725EBF2DF0064F91A /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B057940625EBF2DF0064F91A /* PersistentService.swift */; };
+		B057941225EBFAD60064F91A /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B057941025EBFAD60064F91A /* Article+CoreDataClass.swift */; };
+		B057941325EBFAD60064F91A /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B057941125EBFAD60064F91A /* Article+CoreDataProperties.swift */; };
 		B099DF7925E95F4C00D9D0A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099DF7825E95F4C00D9D0A5 /* AppDelegate.swift */; };
 		B099DF7B25E95F4C00D9D0A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099DF7A25E95F4C00D9D0A5 /* SceneDelegate.swift */; };
 		B099DF8225E95F4F00D9D0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B099DF8125E95F4F00D9D0A5 /* Assets.xcassets */; };
@@ -43,6 +47,10 @@
 /* Begin PBXFileReference section */
 		252B87441BD4589D97499F39 /* Pods-ITWORXTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITWORXTask.release.xcconfig"; path = "Target Support Files/Pods-ITWORXTask/Pods-ITWORXTask.release.xcconfig"; sourceTree = "<group>"; };
 		9C972A769124F016027F6D52 /* Pods-ITWORXTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITWORXTask.debug.xcconfig"; path = "Target Support Files/Pods-ITWORXTask/Pods-ITWORXTask.debug.xcconfig"; sourceTree = "<group>"; };
+		B057940325EBF1320064F91A /* ITWORXTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ITWORXTask.xcdatamodel; sourceTree = "<group>"; };
+		B057940625EBF2DF0064F91A /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
+		B057941025EBFAD60064F91A /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataClass.swift"; path = "/Users/mgoku/Desktop/ITWORXTask/ITWORXTask/Article+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		B057941125EBFAD60064F91A /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataProperties.swift"; path = "/Users/mgoku/Desktop/ITWORXTask/ITWORXTask/Article+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		B099DF7525E95F4C00D9D0A5 /* ITWORXTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITWORXTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B099DF7825E95F4C00D9D0A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B099DF7A25E95F4C00D9D0A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +115,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B057940525EBF2BC0064F91A /* PersistenceService */ = {
+			isa = PBXGroup;
+			children = (
+				B057940625EBF2DF0064F91A /* PersistentService.swift */,
+			);
+			path = PersistenceService;
+			sourceTree = "<group>";
+		};
 		B099DF6C25E95F4C00D9D0A5 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +146,8 @@
 			children = (
 				B099DF7825E95F4C00D9D0A5 /* AppDelegate.swift */,
 				B099DF7A25E95F4C00D9D0A5 /* SceneDelegate.swift */,
+				B057941025EBFAD60064F91A /* Article+CoreDataClass.swift */,
+				B057941125EBFAD60064F91A /* Article+CoreDataProperties.swift */,
 				B099DF9325E95FD700D9D0A5 /* Scenes */,
 				B099DF9225E95FCC00D9D0A5 /* Cells */,
 				B099DF9125E95FBB00D9D0A5 /* Component */,
@@ -138,6 +156,7 @@
 				B099DF8E25E95F9700D9D0A5 /* Extra */,
 				B099DF8C25E95F7200D9D0A5 /* Helpers */,
 				B099DF8125E95F4F00D9D0A5 /* Assets.xcassets */,
+				B057940225EBF1320064F91A /* ITWORXTask.xcdatamodeld */,
 				B099DF8325E95F4F00D9D0A5 /* LaunchScreen.storyboard */,
 				B099DF8625E95F4F00D9D0A5 /* Info.plist */,
 			);
@@ -170,6 +189,7 @@
 		B099DF8F25E95FA600D9D0A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B057940525EBF2BC0064F91A /* PersistenceService */,
 				B099DF9D25E973EF00D9D0A5 /* NewsModel */,
 			);
 			path = Model;
@@ -440,10 +460,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B057940725EBF2DF0064F91A /* PersistentService.swift in Sources */,
 				B099DFA625E978B900D9D0A5 /* NConstants.swift in Sources */,
+				B057941225EBFAD60064F91A /* Article+CoreDataClass.swift in Sources */,
 				B099DFB525E97C9100D9D0A5 /* OnboardingVC.swift in Sources */,
 				B0F0E0E525EB27C500885230 /* ChangeLanguagePresenter.swift in Sources */,
 				B0F0E0DE25EB211300885230 /* Localization.swift in Sources */,
+				B057941325EBFAD60064F91A /* Article+CoreDataProperties.swift in Sources */,
 				B099DFC225E9846900D9D0A5 /* VCExtensions.swift in Sources */,
 				B0F0E0E325EB27AB00885230 /* ChangeLanguageVC.swift in Sources */,
 				B099DFA425E975CD00D9D0A5 /* ITWORXTaskAPI.swift in Sources */,
@@ -463,6 +486,7 @@
 				B099DFC725E9969A00D9D0A5 /* HeadlinesCollectionViewCell.swift in Sources */,
 				B0F0E0DA25EAD7A700885230 /* UserDefault.swift in Sources */,
 				B099DFBE25E97D0400D9D0A5 /* SearchPresenter.swift in Sources */,
+				B057940425EBF1320064F91A /* ITWORXTask.xcdatamodeld in Sources */,
 				B099DFB225E97C5900D9D0A5 /* HeadlinesView.swift in Sources */,
 				B0F0E0E025EB216800885230 /* KeyConstants.swift in Sources */,
 			);
@@ -656,6 +680,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B057940225EBF1320064F91A /* ITWORXTask.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B057940325EBF1320064F91A /* ITWORXTask.xcdatamodel */,
+			);
+			currentVersion = B057940325EBF1320064F91A /* ITWORXTask.xcdatamodel */;
+			path = ITWORXTask.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B099DF6D25E95F4C00D9D0A5 /* Project object */;
 }
